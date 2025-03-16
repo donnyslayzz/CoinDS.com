@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌌 Full Page Navy Background with Gold Grid */
+body, html {
+  @apply min-h-screen w-screen text-white flex flex-col items-center justify-start;
+  background-color: #001F3F; /* Deep navy */
+  background-image: 
+    linear-gradient(60deg, rgba(255, 215, 0, 0.15) 1px, transparent 1px),
+    linear-gradient(-60deg, rgba(255, 215, 0, 0.15) 1px, transparent 1px);
+  background-size: 50px 50px; /* Adjust grid density */
+  background-blend-mode: overlay;
+  overflow-x: hidden; /* ✅ Prevents white outline */
+}
+
+/* 📌 Main App Container - Moves Content Higher */
+#app {
+  @apply max-w-6xl w-full p-4 sm:p-6 text-center relative;
+  margin-top: -50px; /* ✅ Moves content above the center */
+}
+
+/* 🟡 Navigation Bar */
+nav {
+  @apply flex justify-between items-center w-full max-w-6xl mx-auto p-4 bg-[#012A4A] rounded-lg shadow-md border-b border-yellow-500;
+}
+
+/* ✅ Added More Space Between Sections */
+.page-content {
+  @apply mt-8; /* ✅ Moves the content further down from the navbar */
+}
+
+/* 📌 Header Styles */
+h1 {
+  @apply text-4xl font-extrabold text-yellow-400 tracking-wide mt-6 sm:mt-8;
+}
+
+h2 {
+  @apply text-2xl font-semibold mt-6 sm:mt-8 text-gray-300;
+}
+
+/* 🔍 Search Bar */
+input {
+  @apply w-11/12 sm:w-3/4 max-w-lg bg-[#013A63] text-white border border-yellow-500 rounded-full px-4 py-2 mt-6 outline-none shadow-md transition-all duration-300;
+}
+
+/* 📌 Table Styling */
+table {
+  @apply w-full max-w-5xl mx-auto border-collapse mt-8 bg-[#012A4A] rounded-lg shadow-md overflow-hidden text-white;
+}
+
+th {
+  @apply bg-[#014F86] text-gray-300 py-2 px-3 sm:px-4 uppercase text-xs sm:text-sm tracking-wide;
+}
+
+td {
+  @apply py-3 px-4 sm:px-6 border-b border-gray-600 text-sm sm:text-base text-gray-300 whitespace-nowrap;
+}
+
+tr:hover {
+  @apply bg-[#013A63] transition duration-300 ease-in-out;
+}
+
+/* 🪙 Coin Images */
+.coin-img {
+  @apply w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-md mx-auto;
+}
+
+/* 📈 Positive & Negative Change */
+.positive {
+  @apply text-green-400 font-semibold;
+}
+
+.negative {
+  @apply text-red-500 font-semibold;
+}
+
+/* 🎛️ Dropdown & Select Elements */
+select {
+  @apply bg-[#013A63] text-white border border-yellow-500 rounded-md px-3 py-2 outline-none shadow-md transition-all duration-300;
+}
+
+select:focus {
+  @apply border-yellow-400 ring-2 ring-yellow-400;
+}
+
+/* 🔘 Buttons */
+button {
+  @apply px-4 py-2 rounded-full text-base sm:text-lg font-medium bg-yellow-500 text-gray-900 hover:bg-yellow-600 transition-all duration-300 shadow-md;
+}
+
+/* 📌 Fix Background for Full Page */
+.container {
+  @apply w-full flex flex-col items-center justify-start bg-transparent;
+}
+
+/* 📌 Dark Mode Adjustments */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  
+  button {
+    @apply bg-gray-100 text-gray-800 hover:bg-gray-200;
+  }
+
+  table {
+    @apply bg-white text-gray-900;
+  }
+
+  th {
+    @apply bg-gray-200 text-gray-700;
+  }
+
+  tr:hover {
+    @apply bg-gray-100;
+  }
+
+  input {
+    @apply bg-white text-gray-900 border-gray-300;
+  }
+
+  input:focus {
+    @apply border-yellow-500;
+  }
+}
